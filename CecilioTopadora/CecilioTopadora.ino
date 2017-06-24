@@ -4,7 +4,7 @@
 #include <NewPing.h>
 
 
-#define MAX_DIST_CM 50
+#define MAX_DIST_CM 7'0
 
 //pines
 const int ena = 13;
@@ -19,15 +19,13 @@ const int echoTrasero = 52;
 const int triggerTrasero = 53;
 
 //componentes
-//PuenteH puenteH;
-Chasis chasis;
+hasis chasis;
 NewPing sonarDelantero(triggerDelantero, echoDelantero, MAX_DIST_CM);
 NewPing sonarTrasero(triggerTrasero, echoTrasero, MAX_DIST_CM);
 
 void setup(){
   Serial.begin(9600);
-  chasis.inicializar(ena, enb, in1, in2, in3, in4, 10);
-//  puenteH.inicializar(ena, enb, in1, in2, in3, in4);
+  chasis.inicializar(ena, enb, in1, in2, in3, in4, 40);
 }
 
 void loop(){
@@ -37,14 +35,4 @@ void loop(){
     chasis.retroceder();
   else
     chasis.rotarIzquierda();
-  /*puenteH.avanzar();
-  delay(2000);
-  puenteH.retroceder();
-  delay(2000);
-    puenteH.rotarIzquierda();
-  delay(2000);
-  puenteH.rotarDerecha();
-  delay(2000);
-  puenteH.frenar();
-  delay(2000);*/
 }

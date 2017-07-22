@@ -18,17 +18,30 @@ void Ruedas::inicializar(int en, int in1, int in2){
 }
 
 void Ruedas::avanzar(){
-  digitalWrite(en, HIGH);
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
+  digitalWrite(en, HIGH);
+
+  digitalWrite(en, LOW);
+  digitalWrite(en, HIGH);
+  digitalWrite(en, LOW);
+  digitalWrite(en, HIGH);
+
 }
 
 void Ruedas::frenar(){
   digitalWrite(en, LOW);
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
 }
 
 void Ruedas::retroceder(){
-  digitalWrite(en, HIGH);
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
+  digitalWrite(en, HIGH);
+
+  digitalWrite(en, LOW);
+  digitalWrite(en, HIGH);
+  digitalWrite(en, LOW);
+  digitalWrite(en, HIGH);
 }

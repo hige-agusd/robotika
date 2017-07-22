@@ -3,6 +3,12 @@
 #include "PuenteH.h"
 #include <Arduino.h>
 
+enum Estado
+{
+  ESTOY_AVANZANDO, ESTOY_RETROCEDIENDO, ESTOY_ROTANDO_DERECHA, ESTOY_ROTANDO_IZQUIERDA, ESTOY_DOBLANDO_DERECHA, ESTOY_DOBLANDO_IZQUIERDA,
+  ESTOY_QUIETO
+};
+
 class Chasis
 {
 public:
@@ -14,12 +20,17 @@ public:
   void frenar();
   void rotarIzquierda();
   void rotarDerecha();
+  void doblarIzquierda();
+  void doblarDerecha();
   void editarVelocidad(int porcentajeVelocidad);
+  Estado estado;
 protected:
   PuenteH puenteH;
   int porcentajeVelocidad;
 private:
   void demorar(void (PuenteH::*accion)());
 };
+
+
 
 #endif

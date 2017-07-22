@@ -6,7 +6,7 @@
 class PuenteH
 {
 public:
-  explicit PuenteH();
+  PuenteH();
   virtual ~PuenteH();
   void inicializar(int ena, int enb, int in1, int in2, int in3, int in4);
   void avanzar();
@@ -14,6 +14,10 @@ public:
   void frenar();
   void rotarIzquierda();
   void rotarDerecha();
+  void avanzarIzquierda();
+  void avanzarDerecha();
+  void retrocederIzquierda();
+  void retrocederDerecha();
 protected:
   Ruedas ruedasIzquierdas;
   Ruedas ruedasDerechas;
